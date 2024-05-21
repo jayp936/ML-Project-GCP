@@ -54,21 +54,21 @@ class DataTransformation:
     
 
     def initiate_data_transformation(self,train_path,test_path):
-                try:
-                    train_df = pd.read_csv(train_path)
-                    test_df = pd.read_csv(test_path)
-                    logging.info('read train and test data completed')
-                    logging.info('obtaining preprocessing object')
-                    preprocessing_object = self.get_data_transformer_object()
+        try:
+            train_df = pd.read_csv(train_path)
+            test_df = pd.read_csv(test_path)
+            logging.info('read train and test data completed')
+            logging.info('obtaining preprocessing object')
+            preprocessing_object = self.get_data_transformer_object()
 
-                    target_column_name = 'math_score'
-                    numerical_features = ['writing_score','reading_score']
-                    input_features_train_df = train_df.drop(columns=[target_column_name],axis=1)
+            target_column_name = 'math_score'
+            numerical_features = ['writing_score','reading_score']
+            input_features_train_df = train_df.drop(columns=[target_column_name],axis=1)
 
-                    save_object(
-                         file_path = self.data_transformation_config.preprocessor_obj_file_path,
-                         obj = preprocessing_object
-                    )
+            save_object(
+            file_path = self.data_transformation_config.preprocessor_obj_file_path,
+            obj = preprocessing_object
+            )
                     
-                except:
-                    pass
+        except:
+            pass
