@@ -41,4 +41,7 @@ class DataIngestion:
 
 if __name__ == '__main__':
     data_ingestion = DataIngestion()
-    data_ingestion.initiate_data_ingestion()
+    train_data,test_data = data_ingestion.initiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    train_arr,test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
