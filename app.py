@@ -6,7 +6,6 @@ from src.pipeline.predict_pipeline import PredictPipeline, CustomData
 
 application = Flask(__name__)
 
-
 app = application
 
 @app.route('/')
