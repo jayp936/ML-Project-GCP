@@ -8,7 +8,7 @@ def get_requirements(file_path:str)->List[str]:
     requiremnts = []
     with open(file_path) as file:
         requirements = file.readlines()
-        requirements = [req.replace('\n','') for req in requirements]
+        requirements = [req.replace('\n','') for req in requirements] 
         if hyphen_dot in requirements:
             requirements.remove(hyphen_dot)
 
